@@ -1,52 +1,93 @@
 [
-  {
-    "id": "banana-split",
-    "name": "Do The Banana Splits",
-    "description": "One banana, three scoops, no compromises."
-  },
-  {
-    "id": "classic",
-    "name": "The Classic",
-    "description": "It doesn't get simpler than this."
-  },
-  {
-    "id": "fluffernutter",
-    "name": "Fluffernutter",
-    "description": "Peanut butter ice cream with marshmallow fluff on top.  Don't tell your dentist."
-  },
-  {
-    "id": "honey-lavender",
-    "name": "Honey Lavender",
-    "description": "(Ed. note: if you find yourself in Cambridge, MA, the Honeycomb Creamery actually has this and it's *amazing*)"
-  },
-  {
-    "id": "kid-sized",
-    "name": "Kid Sized",
-    "description": "Topped with fruit so those kids can get some vitamins for once."
-  },
-  {
-    "id": "lemon-peanut-butter",
-    "name": "Lemon and Peanut Butter",
-    "description": "It's good!  We promise!"
-  },
-  {
-    "id": "nuts",
-    "name": "We Went Nuts",
-    "description": "We put so many nuts on this there's hardly room for ice cream."
-  },
-  {
-    "id": "salted-caramel",
-    "name": "Salted Caramel Dream",
-    "description": "The best use of sea salt ever invented."
-  },
-  {
-    "id": "triple-chocolate",
-    "name": "Triple Chocolate",
-    "description": "We're working on Quadruple Chocolate but it's stuck in QA."
-  },
-  {
-    "id": "vegan",
-    "name": "Vegan But Not Forgotten",
-    "description": "Memorably delicious!  100% plant based."
-  }
-]
+    {
+      "id": "banana-split",
+      "name": "Do The Banana Splits",
+      "description": "One banana, three scoops, no compromises.",
+      "rating": 4.8
+    },
+    {
+      "id": "classic",
+      "name": "The Classic",
+      "description": "It doesn't get simpler than this.",
+      "rating": 4.5
+    },
+    {
+      "id": "fluffernutter",
+      "name": "Fluffernutter",
+      "description": "Peanut butter ice cream with marshmallow fluff on top. Don't tell your dentist.",
+      "rating": 4.6
+    },
+    {
+      "id": "honey-lavender",
+      "name": "Honey Lavender",
+      "description": "(Ed. note: if you find yourself in Cambridge, MA, the Honeycomb Creamery actually has this and it's *amazing*)",
+      "rating": 4.7
+    },
+    {
+      "id": "kid-sized",
+      "name": "Kid Sized",
+      "description": "Topped with fruit so those kids can get some vitamins for once.",
+      "rating": 4.3
+    },
+    {
+      "id": "lemon-peanut-butter",
+      "name": "Lemon and Peanut Butter",
+      "description": "It's good! We promise!",
+      "rating": 4.0
+    },
+    {
+      "id": "nuts",
+      "name": "We Went Nuts",
+      "description": "We put so many nuts on this there's hardly room for ice cream.",
+      "rating": 4.9
+    },
+    {
+      "id": "salted-caramel",
+      "name": "Salted Caramel Dream",
+      "description": "The best use of sea salt ever invented.",
+      "rating": 4.6
+    },
+    {
+      "id": "triple-chocolate",
+      "name": "Triple Chocolate",
+      "description": "We're working on Quadruple Chocolate but it's stuck in QA.",
+      "rating": 4.8
+    },
+    {
+      "id": "vegan",
+      "name": "Vegan But Not Forgotten",
+      "description": "Memorably delicious! 100% plant based.",
+      "rating": 4.7
+    },
+    {
+      "id": "cookie-monster",
+      "name": "Cookie Monster",
+      "description": "A swirl of cookies and cream with chocolate chips.",
+      "rating": 4.8
+    },
+    {
+      "id": "strawberry-bliss",
+      "name": "Strawberry Bliss",
+      "description": "Fresh strawberries blended with creamy vanilla ice cream.",
+      "rating": 4.6
+    },
+    {
+      "id": "pistachio-delight",
+      "name": "Pistachio Delight",
+      "description": "A nutty delight with a smooth, creamy texture.",
+      "rating": 4.7
+    },
+    {
+      "id": "mango-magic",
+      "name": "Mango Magic",
+      "description": "Tropical mango flavor that makes you feel like you're on vacation.",
+      "rating": 4.9
+    },
+    {
+      "id": "dark-chocolate-fudge",
+      "name": "Dark Chocolate Fudge",
+      "description": "Rich dark chocolate with decadent fudge swirls.",
+      "rating": 5.0
+    }
+  ]
+  

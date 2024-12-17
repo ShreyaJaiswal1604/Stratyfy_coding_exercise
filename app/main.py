@@ -1,12 +1,11 @@
 from fastapi import FastAPI
 from app.routes.sundae_routes import router as sundae_router
 
-app = FastAPI(title="Stratyfy Ice Cream API")
+app = FastAPI(title="Sundae API", version="1.0")
 
-# Include the routes for sundae-related operations
+# Register the sundae routes
 app.include_router(sundae_router)
 
 @app.get("/")
-def root():
-    """Root endpoint to test if the API is running."""
-    return {"message": "Welcome to the Ice Cream Parlor API!"}
+def read_root():
+    return {"message": "Welcome to the Sundae API!"}
