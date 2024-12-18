@@ -1,0 +1,52 @@
+[
+  {
+    "id": "banana-split",
+    "name": "Do The Banana Splits",
+    "description": "One banana, three scoops, no compromises."
+  },
+  {
+    "id": "classic",
+    "name": "The Classic",
+    "description": "It doesn't get simpler than this."
+  },
+  {
+    "id": "fluffernutter",
+    "name": "Fluffernutter",
+    "description": "Peanut butter ice cream with marshmallow fluff on top.  Don't tell your dentist."
+  },
+  {
+    "id": "honey-lavender",
+    "name": "Honey Lavender",
+    "description": "(Ed. note: if you find yourself in Cambridge, MA, the Honeycomb Creamery actually has this and it's *amazing*)"
+  },
+  {
+    "id": "kid-sized",
+    "name": "Kid Sized",
+    "description": "Topped with fruit so those kids can get some vitamins for once."
+  },
+  {
+    "id": "lemon-peanut-butter",
+    "name": "Lemon and Peanut Butter",
+    "description": "It's good!  We promise!"
+  },
+  {
+    "id": "nuts",
+    "name": "We Went Nuts",
+    "description": "We put so many nuts on this there's hardly room for ice cream."
+  },
+  {
+    "id": "salted-caramel",
+    "name": "Salted Caramel Dream",
+    "description": "The best use of sea salt ever invented."
+  },
+  {
+    "id": "triple-chocolate",
+    "name": "Triple Chocolate",
+    "description": "We're working on Quadruple Chocolate but it's stuck in QA."
+  },
+  {
+    "id": "vegan",
+    "name": "Vegan But Not Forgotten",
+    "description": "Memorably delicious!  100% plant based."
+  }
+]
