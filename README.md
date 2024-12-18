@@ -13,7 +13,19 @@ Welcome to the **Stratyfy Coding Exercise**! This project simulates a real-world
 3. **Create an engaging interactive dashboard** with Streamlit for uploading, viewing, and analyzing sales data.
 
 ---
+## **Architecture Diagram** 🏗️✨
 
+Below is the architecture diagram illustrating the structure and flow of the project:
+
+![Stratyfy Architecture](https://github.com/ShreyaJaiswal1604/Stratyfy_coding_exercise/blob/main/images/stratify-architectur.jpeg)
+
+The diagram provides an overview of the interactions between the components:
+- **Streamlit Frontend**: 🎨 Interactive UI for uploading data, viewing reports, and performing analytics.
+- **FastAPI Backend**: 🚀 API for fetching and processing data.
+- **Database**: 💾 PostgreSQL used for data storage and schema management.
+- **Visualizations**: 📊 Revenue and volume charts are dynamically generated for sundaes.
+
+---
 ## **🛠 Tools and Technologies Used**
 
 - **Backend**:
