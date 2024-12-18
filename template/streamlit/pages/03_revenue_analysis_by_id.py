@@ -7,7 +7,7 @@ st.title("Ice Cream Revenue Analysis 🍦")
 
 # Load Ice Cream Image
 st.image(
-    "https://via.placeholder.com/600x200?text=Delicious+Ice+Cream",
+    "https://raw.githubusercontent.com/ShreyaJaiswal1604/Stratyfy_coding_exercise/main/images/ice-cream.jpeg",
     caption="Analyze Ice Cream Sales Revenue!",
     use_container_width=True,  # Updated parameter
 )
@@ -28,14 +28,16 @@ def fetch_sundae_data(sundae_id):
         return None
 
 def main():
-    # User Input for Sundae ID
-    st.subheader("Get Revenue and Volume for a Sundae")
-    sundae_id = st.text_input("Enter Sundae ID:", placeholder="e.g., mango-magic")
+    # Dropdown for Sundae ID Selection
+    st.subheader("Select a Sundae to Analyze")
+    sundae_options = ["banana-split", "classic", "fluffernutter", "honey-lavender", "nuts"]
+    selected_sundae = st.selectbox("Choose a Sundae ID:", sundae_options)
 
-    if sundae_id:
+    # Fetch Data Button
+    if selected_sundae:
         if st.button("Fetch Data"):
-            # Fetch data for the given sundae ID
-            data = fetch_sundae_data(sundae_id)
+            # Fetch data for the selected sundae ID
+            data = fetch_sundae_data(selected_sundae)
 
             if data:
                 # Display data in a neat table
@@ -56,7 +58,7 @@ def main():
 
                 # Add labels and title
                 ax.set_ylabel("Values")
-                ax.set_title(f"Revenue and Volume for Sundae: {sundae_id}")
+                ax.set_title(f"Revenue and Volume for Sundae: {selected_sundae}")
                 st.pyplot(fig)
 
 # Run the main function
