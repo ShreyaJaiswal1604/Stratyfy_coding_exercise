@@ -1,57 +1,222 @@
-# Stratyfy coding exercise
+---
 
-## Introduction
+# 🍦 Stratyfy Coding Exercise 🍦
 
-Attached is data representing sales at an ice cream parlor.  Please download the data and set up a database to store it and an API to access the database.
+---
 
-Please feel free to stop or contact us if you find the exercise taking more than a few hours; we don't want to use large amounts of your time.
+## **🎯 Project Overview**
 
-## Template
+Welcome to the **Stratyfy Coding Exercise**! This project simulates a real-world scenario of managing **sales data for an ice cream parlor**. The goal is to:
 
-Because setting up a backend stack can involve a lot of boilerplate, we've provided a template project for your convenience.  It uses:
+1. **Set up a dynamic database** to store JSON data.  
+2. **Build API endpoints** using FastAPI to access and analyze data.  
+3. **Create an engaging interactive dashboard** with Streamlit for uploading, viewing, and analyzing sales data.
 
-* Python with packages managed by [Poetry](https://python-poetry.org/)
-* [FastAPI](https://fastapi.tiangolo.com/)
-* [sqlite](https://www.sqlite.org/) (At Stratyfy we use Postgres; sqlite is standing in for it as a fully local analog.)
+---
 
-These happen to be some of the tools we use at Stratyfy, but we don't mind at all if you prefer different ones.  As long as your sample meets the objectives below, you are welcome to use as much or as little of the template as you like, as well as to bring in additional packages.
+## **🛠 Tools and Technologies Used**
 
-To use the template with Poetry, first install Poetry according to the instructions, then run
+- **Backend**:
+   - 🚀 **FastAPI**: Framework for building API endpoints.
+   - 🗄 **SQLAlchemy**: Database ORM for schema management.
+   - 🛢 **PostgreSQL**: Relational database for data storage.
+
+- **Frontend**:
+   - 🎨 **Streamlit**: Framework for creating interactive dashboards.
+   - 📊 **Matplotlib** and **Seaborn**: Visualization tools for analytics.
+
+- **Environment Management**:
+   - 🐍 **Poetry**: For dependency and environment management.
+
+- **Other Tools**:
+   - 🔗 **Requests**: API call handling.
+   - 📂 **dotenv**: Environment variable management.
+
+---
+
+## **📊 Project Requirements**
+
+The project requires two JSON data files:  
+1. **`sundaes.json`**: Contains the menu of available sundaes.  
+2. **`sales.json`**: Contains transaction details for each sundae, with `timestamp` in Unix format.
+
+### **Tasks**:
+- Load the JSON data into a **PostgreSQL database** dynamically.
+- Set up two **FastAPI endpoints**:
+   - `GET /sundaes`: Retrieve all sundaes.
+   - `GET /sundaes/{id}`: Retrieve sundae details, including:
+     - `volume`: Number of sundaes sold.  
+     - `revenue`: Total revenue for the sundae.  
+
+- Build a **Streamlit Dashboard** with features for:
+   - Uploading and loading JSON data into the database.
+   - Viewing the data tables interactively.
+   - Analyzing and visualizing sundae sales revenue.
+
+---
+
+## **📁 Folder Structure**
+
+Here’s the well-organized project structure:
+
+```plaintext
+Stratyfy_coding_exercise/
+├── api/                        # FastAPI backend
+│   ├── api.py                  # API endpoints
+│   ├── database.py             # Database setup
+│   └── schema.py               # Schema utilities
+│
+├── streamlit/                  # Streamlit frontend dashboard
+│   ├── pages/                  # Multi-page Streamlit app
+│   │   ├── 01_load_data.py         # Upload JSON data
+│   │   ├── 02_view_data.py         # View database tables
+│   │   ├── 03_revenue_analysis_by_id.py # Revenue analysis by sundae ID
+│   │   └── 04_revenue_report.py    # Comprehensive revenue report
+│   ├── database.py             # Database utility for Streamlit
+│   ├── home.py                 # Main entry point for Streamlit
+│   └── utils.py                # Helper functions
+│
+├── webapp/                     # Backend models and data
+│   ├── data/                   # JSON files
+│   │   ├── sales.json
+│   │   ├── sundaes.json
+│   │   └── sundaes_OG.json
+│   ├── database.py             # SQLAlchemy setup
+│   ├── models.py               # Database ORM models
+│   └── __init__.py
+│
+├── .env                        # Environment variables for DB credentials
+├── exercise.py                 # FastAPI server entry point
+├── poetry.lock                 # Dependency lock file
+├── pyproject.toml              # Project dependencies
+└── README.md                   # Project documentation
 ```
+
+
+---
+
+### **⚙️ Setup and Implementation**
+
+Follow these steps to set up and run the project seamlessly:
+
+---
+
+### **1. Clone the Repository**
+
+Begin by cloning the project repository to your local machine:
+
+```bash
+git clone https://github.com/yourusername/Stratyfy_coding_exercise.git
+cd Stratyfy_coding_exercise
+```
+---
+
+### **2. Install Dependencies**
+
+Ensure Poetry is installed on your system. If not, install it by running:
+
+```bash
+curl -sSL https://install.python-poetry.org | python3 -
+```
+Then install the project dependencies:
+
+```bash
 poetry install
-poetry run fastapi dev exercise.py
 ```
-If all is well, you should be able to browse to the template API's built-in documentation at http://localhost:8000/docs, and see its test endpoint at http://localhost:8000/test.
+---
 
+### **3. Setup Environment Variables**
+Create a .env file in the root directory of the project to configure the database credentials. Add the following:
 
-## Specification
+```bash
+DB_USER=your_username          # PostgreSQL username
+DB_PASSWORD=your_password      # PostgreSQL password
+DB_HOST=localhost              # Database host
+DB_PORT=5432                   # Database port
+DB_NAME=your_database_name     # Database name
 
-### Database
+```
+Replace your_username, your_password, and your_database_name with your PostgreSQL configuration.
 
-The data contains two files:
+---
+### **4. Initialize the Database**
 
-* `sundaes.json` gives the menu of available sundaes.
-* `sales.json` gives a set of sale transactions.  The `timestamp` column is a Unix timestamp.
+Make sure your PostgreSQL server is running. Load the database schema and data using Streamlit:
+1. Start the Streamlit app to upload JSON data:
 
-Set up a database to hold this data and provide code to load the data into the database.  You should imagine that in practice a different service will be writing to this database continuously, so it is *not* appropriate to use the data directly without loading it into a database.
+```bash
+cd streamlit
+poetry run streamlit run pages/01_load_data.py
+```
 
-Note that during the interview we may replace these data files.  The template is set up to create a new temporary database in memory each time it is run, but if you choose to use a different database, you may need a fast way to update the schema and load the new data.
+2. Use the UI to upload sundaes.json and sales.json into the database.
+3. Once the upload is successful, the database tables (sundaes and sales) will be created and populated.
 
-### API
+---
+### **5. Start the FastAPI Server**
 
-Set up an API with two endpoints, both returning JSON:
+Launch the FastAPI server to access the API endpoints:
 
-* `GET /sundaes` should return all the available sundaes as an array of objects, like the original seed data.
-* `GET /sundaes/{id}` should return a single sundae object with the following additional fields:
-  - `volume`, the number of sundaes sold
-  - `revenue`, the total revenue for this type of sundae over all available transactions
+```bash
+poetry run uvicorn api.api:app --reload
+```
+API Endpoints:
 
-You should gracefully handle common error case(s) in an appropriate fashion.
+- GET /sundaes
+  Returns all available sundaes.
 
-When you're happy with your work, please share it with us, e.g. by sharing a GitHub repo.  Please don't hesitate to ask if anything is unclear or troublesome.
+- GET /sundaes/{id}
+  Returns specific sundae details with:
 
-## Interview
+- volume (number of sundaes sold)
+  revenue (total revenue for the sundae).
+  
+- API Documentation:
+  Open the Swagger UI at http://127.0.0.1:8000/docs to explore and test endpoints.
+---
+### **6. Launch the Streamlit Dashboard**
 
-Obviously, the initial implementation of a piece of code is only a small fraction of its life; as such, we are interested in your ability to adapt to changing requirements, like all coders face in the real world.
+Run the Streamlit dashboard for interactive data management and analytics:
 
-Please come to your interview with your code loaded in an environment where you are comfortable changing it and viewing the results, and be prepared to share your screen.
+```bash
+cd streamlit
+poetry run streamlit run home.py
+
+```
+#### Streamlit Pages
+- Home: Project overview and navigation.
+- Upload and Load Data (01_load_data.py): Upload JSON files and load data into the database.
+- View Data (02_view_data.py): Select and view table data dynamically.
+- Revenue Analysis (By ID) (03_revenue_analysis_by_id.py): Analyze revenue and volume for specific sundae IDs.
+- Revenue Report (04_revenue_report.py): Generate an interactive revenue dashboard for all sundaes.
+
+---
+
+### **7. Workflow Summary**
+
+- Upload JSON Data: Use the Upload and Load Data page to populate the database.
+- API Endpoints: Use FastAPI endpoints for data access.
+- Interactive Analytics:
+- View specific sundae revenue via Revenue Analysis.
+- Generate full sundae revenue reports using Revenue Report.
+
+---
+### **8. Testing**
+
+API Testing
+1. Open the API documentation:
+```bash
+cd streamlit
+poetry run streamlit run home.py](http://127.0.0.1:8000/docs
+```
+- use tools like Postman or curl to test the endpoints:
+  
+2. Streamlit Testing
+- Run all Streamlit pages and validate the functionality:
+
+```bash
+poetry run streamlit run home.py
+```
+---
+### 🎉  **9. Conclusion**
+This project provides an end-to-end solution for uploading data, managing a database, and analyzing revenue through APIs and an interactive Streamlit UI. You can customize it further as needed for real-world scenarios.
