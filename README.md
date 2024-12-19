@@ -134,6 +134,7 @@ Then install the project dependencies:
 
 ```bash
 poetry install
+poetry run python exercise.py 
 ```
 ---
 
