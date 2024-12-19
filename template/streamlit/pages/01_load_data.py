@@ -1,13 +1,13 @@
 import streamlit as st
 from pathlib import Path
 from database import Database
-from webapp.models import Sundae, Sale  # Import your model classes
+from webapp.models import Sundae, Sale, Employee  # Import your model classes
 import os
 import time  # To simulate loading time
 
 # Page title with style
 st.title("📂 Upload and Load JSON Data")
-st.write("Use this page to upload a JSON file and load it into the database. Supported tables are **'sundaes'** and **'sales'**.")
+st.write("Use this page to upload a JSON file and load it into the database.")
 
 # Initialize database connection
 db_handler = Database()
@@ -45,6 +45,8 @@ else:
                     model_class = Sundae
                 elif table_name == "sales":
                     model_class = Sale
+                elif table_name == "employees":
+                    model_class = Employee
                 else:
                     st.error("⚠ Unknown table. Supported tables are 'sundaes' and 'sales'.")
                     st.stop()

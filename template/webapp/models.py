@@ -15,8 +15,6 @@ class Sundae(Base):
 
 
 
-
-
 class Sale(Base):
     __tablename__ = "sales"
 
@@ -24,3 +22,13 @@ class Sale(Base):
     sundae_id = Column(String, ForeignKey("sundaes.id"), nullable=False)  # Foreign key to sundaes
     timestamp = Column(Float, nullable=False)  # Unix timestamp as float
     price = Column(Float, nullable=False)  # Price of the sale
+
+
+class Employee(Base):
+    __tablename__ = "employees"
+
+    id = Column(String, primary_key=True, index=True)
+    name = Column(String, nullable=False)
+    role = Column(String, nullable=False)
+    salary = Column(Float, nullable=False)
+    hire_date = Column(String, nullable=False)
