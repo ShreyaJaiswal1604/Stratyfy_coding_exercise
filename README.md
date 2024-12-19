@@ -110,6 +110,18 @@ Stratyfy_coding_exercise/
 ### **⚙️ Setup and Implementation**
 
 Follow these steps to set up and run the project seamlessly:
+---
+### **Basic Commands used**
+
+Begin by cloning the project repository to your local machine:
+
+```bash
+cd template
+poetry run python exercise.py
+uvicorn api.api:app --reload
+streamlit run streamlit/home.py
+```
+---
 
 ---
 
@@ -134,7 +146,7 @@ Then install the project dependencies:
 
 ```bash
 poetry install
-poetry run python exercise.py 
+
 ```
 ---
 
@@ -231,5 +243,44 @@ poetry run streamlit run home.py](http://127.0.0.1:8000/docs
 poetry run streamlit run home.py
 ```
 ---
-### 🎉  **9. Conclusion**
+## **Use Cases Implemented** ✨
+
+The project demonstrates the following use cases to highlight its flexibility and scalability in handling dynamic data scenarios:
+
+---
+
+### **1. Adding Additional Columns to Existing Tables** 🛠️
+
+The application can dynamically update the schema to accommodate additional columns in the existing data files.  
+For example:  
+- The **`sundaes`** table was extended with an additional column `rating` that did not exist in the original dataset.  
+- When the updated `sundaes.json` was uploaded with the `rating` field, the following actions occurred:
+  1. 🚀 **Detection**: The system detected the new column (`rating`).
+  2. 🔄 **Schema Update**: The database schema for the `sundaes` table was updated dynamically to include the new `rating` column.
+  3. ✅ **Data Load**: The updated data was successfully loaded into the database without requiring manual schema adjustments.
+
+This demonstrates how the system adapts seamlessly to evolving data structures. 🧩
+
+---
+
+### **2. Loading a New JSON File (New Table or Dataset)** 🗂️
+
+The project supports adding new datasets by following a structured workflow:
+
+#### **Steps to Add a New Table**
+1. **Define the Table Schema in `models.py`**:  
+   Add a new ORM class for the table with its fields.  
+   For example, to add a table `new_table`, include the following in `models.py`:
+   ```python
+   from sqlalchemy import Column, String, Integer, Float
+   from .database import Base
+
+   class NewTable(Base):
+       __tablename__ = "new_table"
+       id = Column(String, primary_key=True)
+       name = Column(String, nullable=False)
+       value = Column(Float, nullable=True)
+   ```
+---
+### 🎉  **Conclusion**
 This project provides an end-to-end solution for uploading data, managing a database, and analyzing revenue through APIs and an interactive Streamlit UI. You can customize it further as needed for real-world scenarios.
